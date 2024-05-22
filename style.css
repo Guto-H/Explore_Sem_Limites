@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+/*Configurações padrão para o site*/
+:root{
+    font-size: 62.5%;
+
+    --color_title: #B52184;
+    --color_description: #312D64;
+
+}
+
+/*Deixando a rolagem ativada pela interação com a imagem da seta mais suave*/
+html{
+    scroll-behavior: smooth;
+}
+
+body, main, input, label, button, textarea{
+    font-family: "Mulish", sans-serif;
+}
+
+
+.start{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.imageStart img{
+    width: 36.4rem;
+    height: 37rem;
+}
+
+
+.start h1{
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--color_title);
+}
+
+.start p{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color_description);
+}
+
+/*Realizando a junção de duas imagens, deixando uma em background no CSS e outra no HTML*/
+.seta{
+    display: flex;
+    background-image: url(./images/Rectangle\ 1@2x.png);
+    background-size: cover;
+    width: 5.8rem;
+    height: 10.5rem;
+    margin: 3.5rem auto 9rem;
+}
+
+#vetor{
+    margin: 3rem 1.4rem;
+    align-self: center;
+    width: 3rem;
+    height: 4.6rem;
+}
+
+/*Editando o conteudo main*/
+.content{
+    background-image: linear-gradient(to right, #343193, #302C63);
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5rem;
+
+    padding: 5rem 0;
+
+}
+
+.planets{
+    background-color: #FFFFFF;
+    border-radius: 1.9rem;
+    padding: 2.6rem;
+
+    margin: 0 auto;
+    
+}
+
+.planets h2{
+    color: var(--color_title);
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 3.2rem 0 2rem 0;
+}
+
+.planets p{
+    color: var(--color_description);
+
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    width: 26.5rem;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7.8rem 4.1rem;
+    margin: 0 auto;
+}
+
+.formulary h1{
+    color: var(--color_title);
+
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 4.3rem;
+}
+
+.formulary {
+    display: flex;
+    flex-direction: column;
+    margin: 4.3rem 0 auto;
+    width: 100%;
+}
+
+.formulary img{
+    width: 2rem;
+    height: 2.1rem;
+}
+
+/*Colocando borda ao redor dos inputs para englobar os icones*/
+.input-wrapper{
+    display: flex;
+
+    border: 2px solid #312D64;
+    border-radius: 1.6rem;
+
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2.4rem;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/*
+ - Retirando borda que vem com input e calibrando tamanho do input
+*/
+.input-wrapper input{
+    border: none;
+    width: 100%;
+
+    color: var(--color_description);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+/*
+ - Configurando coloração do placeholder
+*/
+.input-wrapper input::placeholder{
+    color: var(--color_description);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/*
+- Retirando a marcação do input que fica quando selecionado
+*/
+.input-wrapper input:focus-visible{
+    outline: none;
+}
+
+.input-wrapper-text{
+    margin-bottom: 2.4rem;
+}
+
+
+.input-wrapper-text textarea{
+    border: 2px solid #312D64;
+    border-radius: 1.6rem;
+
+    padding: 1.2rem 1.6rem;
+
+    width: 100%;
+    height: 12.6rem;
+
+    color: var(--color_description);
+    font-size: 1.6rem;
+    font-weight: 600;
+
+}
+
+.input-wrapper-text textarea::placeholder{
+    color: var(--color_description);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.formulary button{
+    background-image: linear-gradient(to right, #343193, #302C63);
+    color: #FFFFFF;
+
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+
+    width: 16.2rem;
+    padding: 1.05rem 1.6rem;
+
+    border-radius: 1.6rem;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 3.2rem 1.6rem;
+
+    font-size: 2rem;
+    font-weight: 600;
+
+    color: #FFFFFF;
+    background-image: linear-gradient(to right, #343193, #302C63);
+}
+
+
+/* 
+- Animação para o planetas ficarem girando
+*/
+.planetRotate{                             
+    animation-name: rotate;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/*
+- Conversão para desktop
+*/
+@media (min-width: 1100px){
+
+    /*
+     - Invertendo a posição que aparece os elementos, primeiro titulo e seta, depois imagem
+    */
+    .start{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 4rem;
+        margin: 0 auto;
+
+        font-size: 5.8rem;
+        
+    }
+
+    .imageStart img{
+        width: 60rem;
+        height: 60rem;
+        margin-bottom: 8rem;
+    }
+
+    .textStart{
+        margin-top: 20rem;
+        text-align: left;
+
+    }
+
+    .textStart h1{
+        font-size: 4.8rem;
+    }
+
+    .textStart p{
+        font-size: 2.2rem;
+    }
+
+    .seta{
+        margin: 18rem 0 0 0;
+    }
+
+    .content{
+        display: flex;
+        justify-content: center;
+        gap: 8rem;
+    }
+
+    .planets{
+        margin: 0;
+    }
+
+    .planets h2{
+        font-size: 3.2rem;
+    }
+
+    .planets p{
+        font-size: 1.9rem;
+    }
+
+
+    .contact{
+        padding: 0;
+    }
+
+    /*
+    - Adicionando background de estrelas para ficar no setor contato, como background não interfere
+      na posição do formulario.
+    */
+    .backgroundContact{
+        width: 100%;
+        background-image: url(./images/image\ 11976.png);
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+
+    /*
+    - Container feito para fixar a posição do formulario e alinhar de acordo com o restante do conteudo
+    */
+    .containerForm{
+        width: 110rem;
+        margin: 8.5rem auto;
+    }
+
+    .formulary{
+        width: 60rem;
+        
+    }
+
+    .formulary h1{
+        font-size: 4.2rem;
+    }
+
+}
+
+/*
+ - Animação dos planetas
+*/
+@keyframes rotate{
+    100%{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
